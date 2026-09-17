@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 64" width="280" height="64">
+  <defs>
+    <!-- Styles for light/dark adaptive text inside SVG -->
+    <style>
+      .logo-text-h { fill: #2563EB; }
+      .logo-text-o { fill: #1E293B; }
+      .logo-text-a { fill: url(#hoai-text-grad); }
+      .logo-text-i { fill: #4F46E5; }
+      .logo-subtext { fill: #64748B; font-weight: 700; }
+
+      @media (prefers-color-scheme: dark) {
+        .logo-text-o { fill: #F8FAFC; }
+        .logo-subtext { fill: #94A3B8; }
+      }
+    </style>
+
+    <!-- Gradient for Emblem -->
+    <linearGradient id="hoai-emblem-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1D4ED8"/>
+      <stop offset="45%" stop-color="#3B82F6"/>
+      <stop offset="80%" stop-color="#00D2FF"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+
+    <!-- Gradient for Arrowhead -->
+    <linearGradient id="hoai-arrow-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="70%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#A5F3FC"/>
+    </linearGradient>
+
+    <!-- Gradient for Text HoAi -->
+    <linearGradient id="hoai-text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="50%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="cyan-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Group: Logo Icon Emblem (H + Neural + Soaring Arrow) -->
+  <g transform="translate(4, 2)">
+    <!-- Left Neural Pillar of 'H' -->
+    <path d="M 14,48 C 10,42 10,22 14,16 C 16,13 20,13 22,16 L 22,48 Z" fill="url(#hoai-emblem-grad)" opacity="0.95"/>
+    
+    <!-- Circuit Lines & Nodes on Left Pillar -->
+    <path d="M 17,15 L 7,9 M 17,25 L 5,23 M 17,35 L 6,37 M 17,45 L 8,51" stroke="#00D2FF" stroke-width="2.2" stroke-linecap="round"/>
+    <circle cx="7" cy="9" r="2.8" fill="#00E5FF" filter="url(#cyan-glow)"/>
+    <circle cx="5" cy="23" r="2.5" fill="#38BDF8"/>
+    <circle cx="6" cy="37" r="2.5" fill="#60A5FA"/>
+    <circle cx="8" cy="51" r="2.5" fill="#2563EB"/>
+
+    <!-- Interconnecting Circuit Tracks -->
+    <path d="M 7,9 L 5,23 M 5,23 L 6,37 M 6,37 L 8,51" stroke="#38BDF8" stroke-width="1.2" stroke-dasharray="2 2" opacity="0.6"/>
+
+    <!-- Curved Bridge (Crossbar of 'H') -->
+    <path d="M 20,33 Q 30,29 38,24" stroke="url(#hoai-emblem-grad)" stroke-width="5.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Right Pillar / Soaring Body of 'H' -->
+    <path d="M 34,48 C 32,36 36,22 44,12 L 49,17 C 42,26 40,36 40,48 Z" fill="url(#hoai-emblem-grad)"/>
+
+    <!-- Main Upward Arrow -->
+    <path d="M 24,44 Q 36,26 50,5 L 43,5 M 50,5 L 50,12" stroke="url(#hoai-arrow-grad)" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <polygon points="51,2 56,10 47,9" fill="#00E5FF" filter="url(#cyan-glow)"/>
+
+    <!-- Sparkle Stars -->
+    <path d="M 44,0 C 44,2.5 45,3.5 47.5,3.5 C 45,3.5 44,4.5 44,7 C 44,4.5 43,3.5 40.5,3.5 C 43,3.5 44,2.5 44,0 Z" fill="#7DD3FC"/>
+    <path d="M 54,17 C 54,18.5 55,19 56.5,19 C 55,19 54,19.5 54,21 C 54,19.5 53,19 51.5,19 C 53,19 54,18.5 54,17 Z" fill="#38BDF8"/>
+  </g>
+
+  <!-- Brand Name: HoAi -->
+  <g transform="translate(70, 36)">
+    <!-- 'H' -->
+    <text x="0" y="0" font-family="'Outfit', 'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-weight="800" font-size="34" class="logo-text-h">H</text>
+    
+    <!-- 'o' -->
+    <text x="25" y="0" font-family="'Outfit', 'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-weight="700" font-size="34" class="logo-text-o">o</text>
+    
+    <!-- 'A' -->
+    <text x="46" y="0" font-family="'Outfit', 'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-weight="800" font-size="34" class="logo-text-a">A</text>
+    
+    <!-- Dynamic Swoosh crossbar on 'A' -->
+    <path d="M 44,-8 Q 56,-16 67,-6" stroke="#00E5FF" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.95"/>
+
+    <!-- 'i' -->
+    <text x="68" y="0" font-family="'Outfit', 'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-weight="800" font-size="34" class="logo-text-i">i</text>
+    <!-- Glowing cyan dot over 'i' -->
+    <circle cx="73" cy="-26" r="3.5" fill="#00E5FF" filter="url(#cyan-glow)"/>
+  </g>
+
+  <!-- Subtitle: ARTIFICIAL INTELLIGENCE -->
+  <text x="71" y="52" font-family="'Source Sans 3', 'Inter', 'Segoe UI', sans-serif" font-size="9" letter-spacing="2.2" class="logo-subtext">
+    ARTIFICIAL INTELLIGENCE
+  </text>
+</svg>

@@ -1,4 +1,30 @@
-/* --- Reset & Variabel Global --- */
+/* --- Reset & Variabel Global (Pure HTML + CSS Theme Switching) --- */
+.theme-toggle-input {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -9999 !important;
+}
+
+/* --- Multi-Article Pure CSS Switcher for blog-detail.html --- */
+.article-post {
+    display: none;
+}
+
+.article-post:first-child,
+.article-post:target {
+    display: block;
+}
+
+:root:has(.article-post:target) .article-post:not(:target) {
+    display: none !important;
+}
+
+/* Default Mode: Dark Mode */
 :root {
     --primary: #3b82f6;
     --primary-hover: #2563eb;
@@ -7,17 +33,58 @@
     --emerald: #10b981;
     --amber: #f59e0b;
     --bg-main: #0b0f19;
+    --bg-header: rgba(11, 15, 25, 0.88);
     --bg-section: #111827;
     --bg-card: #1e293b;
     --bg-card-hover: #24334a;
     --text-main: #f8fafc;
-    --text-light: #94a3b8;
-    --text-muted: #64748b;
+    --text-light: #cbd5e1;
+    --text-muted: #94a3b8;
     --border: #334155;
     --border-glow: rgba(59, 130, 246, 0.4);
     --font-heading: 'Outfit', sans-serif;
     --font-sans: 'Source Sans 3', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
+    --toggle-bg: rgba(30, 41, 59, 0.8);
+    --toggle-border: #334155;
+    --toggle-text: #f8fafc;
+    --footer-bg: #080c14;
+}
+
+/* Toggle Icon & Label Display (Dark Mode) */
+.icon-light, .label-light {
+    display: none !important;
+}
+.icon-dark, .label-dark {
+    display: inline-block !important;
+}
+
+/* Light Mode Variables when #theme-toggle is CHECKED */
+:root:has(#theme-toggle:checked) {
+    --bg-main: #f8fafc;
+    --bg-header: rgba(255, 255, 255, 0.92);
+    --bg-section: #f1f5f9;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f1f5f9;
+    --text-main: #0f172a;
+    --text-light: #334155;
+    --text-muted: #64748b;
+    --border: #cbd5e1;
+    --border-glow: rgba(59, 130, 246, 0.3);
+    --toggle-bg: #ffffff;
+    --toggle-border: #cbd5e1;
+    --toggle-text: #0f172a;
+    --footer-bg: #e2e8f0;
+}
+
+/* Toggle Icon & Label Display (Light Mode) */
+:root:has(#theme-toggle:checked) .icon-dark,
+:root:has(#theme-toggle:checked) .label-dark {
+    display: none !important;
+}
+:root:has(#theme-toggle:checked) .icon-light,
+:root:has(#theme-toggle:checked) .label-light {
+    display: inline-block !important;
 }
 
 * {
@@ -36,6 +103,7 @@ body {
     color: var(--text-main);
     line-height: 1.6;
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -45,15 +113,59 @@ body {
     padding: 0 20px;
 }
 
+/* --- Logo Styling --- */
+.site-logo {
+    height: 42px;
+    width: auto;
+    object-fit: contain;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    transition: transform 0.25s ease, filter 0.25s ease;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.site-logo:hover {
+    transform: translateY(-1px) scale(1.03);
+    filter: drop-shadow(0 4px 12px rgba(59, 130, 246, 0.45));
+}
+
+/* --- Theme Toggle Button --- */
+.theme-toggle-btn {
+    background-color: var(--toggle-bg);
+    border: 1px solid var(--toggle-border);
+    color: var(--toggle-text);
+    padding: 7px 14px;
+    border-radius: 10px;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.theme-toggle-btn:hover {
+    border-color: var(--primary);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+}
+
 /* --- Header & Navigasi --- */
 .site-header {
-    background-color: rgba(11, 15, 25, 0.85);
+    background-color: var(--bg-header);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--border);
     position: sticky;
     top: 0;
     z-index: 1000;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .navbar {
@@ -905,4 +1017,162 @@ body {
         gap: 12px;
         text-align: center;
     }
+}
+
+/* --- Specific Light Mode Customization & UI Polish --- */
+[data-theme="light"] .floating-card {
+    background-color: #ffffff;
+    border-color: #e2e8f0;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08), 0 0 20px rgba(59, 130, 246, 0.1);
+}
+
+[data-theme="light"] .terminal-header {
+    background-color: #f1f5f9;
+    border-bottom-color: #e2e8f0;
+}
+
+[data-theme="light"] .terminal-title {
+    color: #475569;
+}
+
+[data-theme="light"] .stat-badge {
+    background-color: #f8fafc;
+    border-color: #e2e8f0;
+}
+
+[data-theme="light"] .stat-label {
+    color: #64748b;
+}
+
+/* --- Pure HTML + CSS Light Mode Component Overrides --- */
+
+:root:has(#theme-toggle:checked) body {
+    background-color: var(--bg-main) !important;
+    color: var(--text-main) !important;
+}
+
+/* Fix White Font in Light Mode across all components */
+:root:has(#theme-toggle:checked) .text-white:not(.btn-primary):not(.badge-primary):not(.no-theme-swap):not(.article-hero-banner *):not(.cv-header-banner *) {
+    color: var(--text-main) !important;
+}
+
+/* Dark Background Boxes & Cards -> Light Mode Card Styling */
+:root:has(#theme-toggle:checked) .bg-dark:not(.no-theme-swap):not(.article-hero-banner),
+:root:has(#theme-toggle:checked) .bg-slate-900:not(.no-theme-swap):not(.article-hero-banner),
+:root:has(#theme-toggle:checked) .bg-slate-800:not(.no-theme-swap):not(.article-hero-banner),
+:root:has(#theme-toggle:checked) .bg-slate-950:not(.no-theme-swap),
+:root:has(#theme-toggle:checked) .bg-slate-950\/80:not(.no-theme-swap),
+:root:has(#theme-toggle:checked) .bg-slate-900\/60:not(.no-theme-swap),
+:root:has(#theme-toggle:checked) .bg-slate-900\/50:not(.no-theme-swap),
+:root:has(#theme-toggle:checked) .bg-slate-800\/90:not(.no-theme-swap) {
+    background-color: var(--bg-card) !important;
+    color: var(--text-main) !important;
+    border-color: var(--border) !important;
+}
+
+/* Card Overrides */
+:root:has(#theme-toggle:checked) .card,
+:root:has(#theme-toggle:checked) .cv-main-card,
+:root:has(#theme-toggle:checked) .article-container,
+:root:has(#theme-toggle:checked) .related-card,
+:root:has(#theme-toggle:checked) .feature-card,
+:root:has(#theme-toggle:checked) .price-card,
+:root:has(#theme-toggle:checked) .stat-card,
+:root:has(#theme-toggle:checked) .consult-box,
+:root:has(#theme-toggle:checked) .about-visual {
+    background-color: var(--bg-card) !important;
+    color: var(--text-main) !important;
+    border-color: var(--border) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Text Colors in Light Mode */
+:root:has(#theme-toggle:checked) .text-slate-100,
+:root:has(#theme-toggle:checked) .text-slate-200,
+:root:has(#theme-toggle:checked) .text-slate-300,
+:root:has(#theme-toggle:checked) .text-gray-100,
+:root:has(#theme-toggle:checked) .text-gray-200,
+:root:has(#theme-toggle:checked) .text-gray-300,
+:root:has(#theme-toggle:checked) .hero-title,
+:root:has(#theme-toggle:checked) .section-title,
+:root:has(#theme-toggle:checked) .card-title,
+:root:has(#theme-toggle:checked) .article-title,
+:root:has(#theme-toggle:checked) .article-heading {
+    color: var(--text-main) !important;
+}
+
+:root:has(#theme-toggle:checked) .text-slate-400,
+:root:has(#theme-toggle:checked) .text-gray-400,
+:root:has(#theme-toggle:checked) .text-muted,
+:root:has(#theme-toggle:checked) .text-secondary,
+:root:has(#theme-toggle:checked) .hero-description,
+:root:has(#theme-toggle:checked) .section-description,
+:root:has(#theme-toggle:checked) .card-text,
+:root:has(#theme-toggle:checked) .article-body-text {
+    color: var(--text-muted) !important;
+}
+
+/* Navbars in Light Mode */
+:root:has(#theme-toggle:checked) .site-header,
+:root:has(#theme-toggle:checked) .navbar-dark,
+:root:has(#theme-toggle:checked) .bg-dark.navbar {
+    background-color: var(--bg-header) !important;
+    border-bottom: 1px solid var(--border) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05) !important;
+}
+
+:root:has(#theme-toggle:checked) .navbar-dark .nav-link,
+:root:has(#theme-toggle:checked) .site-header a,
+:root:has(#theme-toggle:checked) .nav-menu a {
+    color: var(--text-main) !important;
+}
+
+:root:has(#theme-toggle:checked) .nav-latihan-toggle,
+:root:has(#theme-toggle:checked) .nav-latihan-menu {
+    background-color: var(--bg-card) !important;
+    color: var(--text-main) !important;
+    border-color: var(--border) !important;
+}
+
+:root:has(#theme-toggle:checked) .nav-latihan-menu a {
+    color: var(--text-main) !important;
+    border-bottom-color: var(--border) !important;
+}
+
+/* Footers in Light Mode */
+:root:has(#theme-toggle:checked) .site-footer,
+:root:has(#theme-toggle:checked) footer.bg-dark {
+    background-color: var(--footer-bg) !important;
+    color: var(--text-main) !important;
+    border-top: 1px solid var(--border) !important;
+}
+
+:root:has(#theme-toggle:checked) .site-footer p,
+:root:has(#theme-toggle:checked) .site-footer a,
+:root:has(#theme-toggle:checked) .site-footer span,
+:root:has(#theme-toggle:checked) footer.bg-dark p,
+:root:has(#theme-toggle:checked) footer.bg-dark a {
+    color: var(--text-muted) !important;
+}
+
+:root:has(#theme-toggle:checked) .site-footer h4,
+:root:has(#theme-toggle:checked) .site-footer strong {
+    color: var(--text-main) !important;
+}
+
+/* CV Specific Overrides in Light Mode */
+:root:has(#theme-toggle:checked) .cv-top-bar {
+    background-color: #f1f5f9 !important;
+    border-bottom-color: #cbd5e1 !important;
+}
+
+:root:has(#theme-toggle:checked) .cv-box {
+    background-color: #f8fafc !important;
+    border-color: #e2e8f0 !important;
+}
+
+:root:has(#theme-toggle:checked) .cv-badge {
+    background-color: #e2e8f0 !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
 }

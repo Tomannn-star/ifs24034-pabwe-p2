@@ -3,23 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">Detail Artikel Blog - HoAi</title>
+    <title>Detail Artikel Blog - HoAi</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
     <style>
         .hover-shadow { transition: transform 0.2s, box-shadow 0.2s; }
         .hover-shadow:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important; }
     </style>
 </head>
-<body class="bg-light">
+<body class="bg-dark text-light min-vh-100 d-flex flex-column">
+
+    <!-- Pure CSS Theme Switcher Checkbox (Fixed Position to prevent scroll jump) -->
+    <input type="checkbox" id="theme-toggle" class="theme-toggle-input" aria-label="Toggle Mode Dark/Light">
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">Ho<span class="text-primary">Ai</span> Blog</a>
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <img src="assets/image/logo.svg" alt="HoAi Artificial Intelligence" class="site-logo">
+                <span class="fw-bold fs-5 text-white">Blog</span>
+            </a>
             <div class="ms-auto d-flex align-items-center gap-2">
+                <!-- Theme Toggle Button -->
+                <label for="theme-toggle" class="theme-toggle-btn me-1" role="button" tabindex="0" title="Beralih Mode Gelap/Terang">
+                    <i class="bi bi-moon-stars-fill icon-dark text-info"></i>
+                    <i class="bi bi-sun-fill icon-light text-warning"></i>
+                    <span class="theme-toggle-label label-dark">Mode Gelap</span>
+                    <span class="theme-toggle-label label-light">Mode Terang</span>
+                </label>
                 <a href="blog.html" class="btn btn-outline-light btn-sm"><i class="bi bi-arrow-left"></i> Semua Artikel</a>
                 <a href="index.html#kontak" class="btn btn-primary btn-sm"><i class="bi bi-headset"></i> Hubungi Kami</a>
             </div>
@@ -29,110 +44,226 @@
     <!-- Article Content Container -->
     <main class="container my-5">
         <div class="row justify-content-center">
-            <div class="col-lg-9 bg-white p-4 p-md-5 rounded-4 shadow-sm border">
+            <div class="col-lg-9 article-container p-4 p-md-5 rounded-4">
                 
-                <!-- Meta Header Info -->
-                <div class="mb-4">
-                    <span id="article-badge" class="badge bg-primary text-white mb-2 px-3 py-2 rounded-pill">Teknologi AI</span>
-                    <h1 id="article-title" class="fw-bold mb-3 display-6 text-dark">Masa Depan Generative AI di Dunia Industri Modern</h1>
-                    <div id="article-meta" class="text-muted small d-flex flex-wrap gap-3 align-items-center">
-                        <span><i class="bi bi-person-circle text-primary"></i> <span id="article-author">Oleh Tim Riset HoAi</span></span>
-                        <span><i class="bi bi-calendar3 text-primary"></i> <span id="article-date">16 September 2026</span></span>
-                        <span><i class="bi bi-clock text-primary"></i> <span id="article-readtime">5 Menit Bacaan</span></span>
-                    </div>
-                </div>
-
-                <!-- Featured Image Visual Box -->
-                <div id="article-visual" class="bg-primary text-white p-5 rounded-4 d-flex align-items-center justify-content-center mb-4 shadow-inner" style="height: 280px;">
-                    <i id="article-icon" class="bi bi-cpu display-1"></i>
-                </div>
-
-                <!-- Body Content -->
-                <div id="article-body" class="content text-secondary lh-lg">
-                    <p class="lead text-dark fw-semibold mb-4">Bagaimana model bahasa besar (LLM) dan kecerdasan generatif mengubah cara perusahaan memproses data, menghasilkan ide produk, dan melayani pelanggan secara real-time.</p>
-                    
-                    <p>Perkembangan kecerdasan buatan (Artificial Intelligence) dalam beberapa tahun terakhir telah bergeser dari sekadar alat bantu analisis data sederhana menjadi sistem kreatif yang mampu memproduksi teks, kode pemrograman, gambar, hingga strategi bisnis kompleks.</p>
-                    
-                    <h4 class="fw-bold text-dark mt-4">1. Otomatisasi Lanjutan dan Efisiensi Operasional</h4>
-                    <p>Implementasi Generative AI di sektor industri modern bukan lagi sekadar tren teknologi, melainkan kebutuhan komparatif untuk menjaga daya saing pasar. Dengan memanfaatkan model neural HoAi Engine v4.0, organisasi dapat mengurangi pemrosesan dokumen manual hingga 80%, mengotomatisasi penyusunan laporan keuangan, dan mempercepat pembuatan dokumentasi teknis.</p>
-                    
-                    <h4 class="fw-bold text-dark mt-4">2. Peran Strategis HoAi dalam Transformasi Enterprise</h4>
-                    <p>Di <strong>HoAi</strong>, kami berfokus untuk menjembatani jurang antara riset AI tingkat lanjut dan implementasi praktis di lapangan. Melalui pendekatan arsitektur neural yang dioptimalkan, perusahaan dari berbagai skala kini dapat mengintegrasikan otomatisasi tanpa mengorbankan keamanan data internal.</p>
-                    
-                    <div class="p-4 bg-light border-start border-primary border-4 rounded-3 my-4">
-                        <h6 class="fw-bold text-primary mb-2"><i class="bi bi-lightbulb-fill"></i> Key Takeaways Transformasi Industri:</h6>
-                        <ul class="mb-0 ps-3">
-                            <li class="mb-1"><strong>Peningkatan Produktivitas Tim:</strong> Penghematan waktu operasional rutin hingga 15-20 jam kerja per minggu per karyawan.</li>
-                            <li class="mb-1"><strong>Respons Pelanggan Cepat:</strong> Agen virtual cerdas dengan tingkat penyelesaian masalah pertama (First Contact Resolution) mencapai 94%.</li>
-                            <li class="mb-1"><strong>Personalisasi Produk:</strong> Analisis preferensi konsumen secara instan untuk menyajikan konten & layanan yang dipersonalisasi.</li>
-                        </ul>
+                <!-- ==================== ARTIKEL 1: Generative AI ==================== -->
+                <article class="article-post" id="generative-ai">
+                    <!-- Meta Header Info -->
+                    <div class="mb-4">
+                        <span class="badge bg-primary text-white mb-2 px-3 py-2 rounded-pill"><i class="bi bi-cpu me-1"></i> Generative AI</span>
+                        <h1 class="fw-bold mb-3 display-6 article-title">Masa Depan Generative AI di Dunia Industri Modern</h1>
+                        <div class="article-body-text small d-flex flex-wrap gap-3 align-items-center">
+                            <span><i class="bi bi-person-circle text-primary me-1"></i> Tim Riset HoAi</span>
+                            <span><i class="bi bi-calendar3 text-primary me-1"></i> 16 September 2026</span>
+                            <span><i class="bi bi-clock text-primary me-1"></i> 5 Menit Bacaan</span>
+                        </div>
                     </div>
 
-                    <h4 class="fw-bold text-dark mt-4">3. Tantangan Kesiapan Infrastruktur & Skalabilitas</h4>
-                    <p>Meskipun potensi Generative AI sangat luas, tantangan utama yang dihadapi oleh enterprise adalah latency (tunda waktu) dan biaya pemrosesan komputasi. Oleh karena itu, arsitektur HoAi menggabungkan teknik <i>quantization</i> modern dan <i>hybrid cloud edge</i> yang mampu memangkas konsumsi sumber daya komputasi hingga 65% tanpa mengorbankan akurasi model.</p>
+                    <!-- Featured Image Visual Box -->
+                    <div class="article-hero-banner text-white p-5 rounded-4 d-flex flex-column align-items-center justify-content-center mb-4 text-center" style="min-height: 240px; background: linear-gradient(135deg, #1e1b4b 0%, #2563eb 50%, #00d2ff 100%);">
+                        <i class="bi bi-cpu display-1 text-light mb-2"></i>
+                        <span class="badge bg-info text-dark font-monospace px-3 py-1 rounded-pill mt-2">HoAi Neural Engine v4.0 Insight</span>
+                    </div>
 
-                    <p class="mt-4">Masa depan bisnis bukan lagi tentang siapa yang mengumpulkan data terbanyak, melainkan siapa yang mampu mengekstrak wawasan tercepat menggunakan sistem Generative AI yang andal dan aman.</p>
-                </div>
+                    <!-- Body Content -->
+                    <div class="content article-body-text lh-lg">
+                        <p class="lead article-lead mb-4">Bagaimana model bahasa besar (LLM) dan kecerdasan generatif mengubah cara perusahaan memproses data, menghasilkan ide produk, dan melayani pelanggan secara real-time.</p>
+                        
+                        <p>Perkembangan kecerdasan buatan (Artificial Intelligence) dalam beberapa tahun terakhir telah bergeser dari sekadar alat bantu analisis data sederhana menjadi sistem kreatif yang mampu memproduksi teks, kode pemrograman, gambar, hingga strategi bisnis kompleks.</p>
+                        
+                        <h4 class="fw-bold article-heading mt-4">1. Otomatisasi Lanjutan dan Efisiensi Operasional</h4>
+                        <p>Implementasi Generative AI di sektor industri modern bukan lagi sekadar tren teknologi, melainkan kebutuhan komparatif untuk menjaga daya saing pasar. Dengan memanfaatkan model neural HoAi Engine v4.0, organisasi dapat mengurangi pemrosesan dokumen manual hingga 80%, mengotomatisasi penyusunan laporan keuangan, dan mempercepat pembuatan dokumentasi teknis.</p>
+                        
+                        <h4 class="fw-bold article-heading mt-4">2. Peran Strategis HoAi dalam Transformasi Enterprise</h4>
+                        <p>Di <strong>HoAi</strong>, kami berfokus untuk menjembatani jurang antara riset AI tingkat lanjut dan implementasi praktis di lapangan. Melalui pendekatan arsitektur neural yang dioptimalkan, perusahaan dari berbagai skala kini dapat mengintegrasikan otomatisasi tanpa mengorbankan keamanan data internal.</p>
+                        
+                        <div class="p-4 article-callout rounded-3 my-4">
+                            <h6 class="fw-bold text-primary mb-2"><i class="bi bi-lightbulb-fill"></i> Key Takeaways Transformasi Industri:</h6>
+                            <ul class="mb-0 ps-3">
+                                <li class="mb-1"><strong>Peningkatan Produktivitas Tim:</strong> Penghematan waktu operasional rutin hingga 15-20 jam kerja per minggu per karyawan.</li>
+                                <li class="mb-1"><strong>Respons Pelanggan Cepat:</strong> Agen virtual cerdas dengan tingkat penyelesaian masalah pertama (First Contact Resolution) mencapai 94%.</li>
+                                <li class="mb-1"><strong>Personalisasi Produk:</strong> Analisis preferensi konsumen secara instan untuk menyajikan konten & layanan yang dipersonalisasi.</li>
+                            </ul>
+                        </div>
+
+                        <h4 class="fw-bold article-heading mt-4">3. Tantangan Kesiapan Infrastruktur & Skalabilitas</h4>
+                        <p>Meskipun potensi Generative AI sangat luas, tantangan utama yang dihadapi oleh enterprise adalah latency (tunda waktu) dan biaya pemrosesan komputasi. Oleh karena itu, arsitektur HoAi menggabungkan teknik <i>quantization</i> modern dan <i>hybrid cloud edge</i> yang mampu memangkas konsumsi sumber daya komputasi hingga 65% tanpa mengorbankan akurasi model.</p>
+                    </div>
+                </article>
+
+
+                <!-- ==================== ARTIKEL 2: Security & Ethics ==================== -->
+                <article class="article-post" id="ethic-security">
+                    <!-- Meta Header Info -->
+                    <div class="mb-4">
+                        <span class="badge bg-success text-white mb-2 px-3 py-2 rounded-pill"><i class="bi bi-shield-lock me-1"></i> Security & Ethics</span>
+                        <h1 class="fw-bold mb-3 display-6 article-title">Etika dan Keamanan Data dalam Penerapan Algoritma AI</h1>
+                        <div class="article-body-text small d-flex flex-wrap gap-3 align-items-center">
+                            <span><i class="bi bi-person-circle text-success me-1"></i> Spesialis Keamanan HoAi</span>
+                            <span><i class="bi bi-calendar3 text-success me-1"></i> 14 September 2026</span>
+                            <span><i class="bi bi-clock text-success me-1"></i> 6 Menit Bacaan</span>
+                        </div>
+                    </div>
+
+                    <!-- Featured Image Visual Box -->
+                    <div class="article-hero-banner text-white p-5 rounded-4 d-flex flex-column align-items-center justify-content-center mb-4 text-center" style="min-height: 240px; background: linear-gradient(135deg, #064e3b 0%, #10b981 50%, #059669 100%);">
+                        <i class="bi bi-shield-lock display-1 text-light mb-2"></i>
+                        <span class="badge bg-light text-dark font-monospace px-3 py-1 rounded-pill mt-2">HoAi SafeGuard Framework v2.1</span>
+                    </div>
+
+                    <!-- Body Content -->
+                    <div class="content article-body-text lh-lg">
+                        <p class="lead article-lead mb-4">Menjaga privasi pengguna, kepatuhan regulasi GDPR/PDP, dan transparansi sistem kecerdasan buatan agar tetap aman digunakan di sektor finansial dan kesehatan.</p>
+                        
+                        <p>Penerapan kecerdasan buatan dalam skala besar membawa tanggung jawab etis yang tinggi. Ketika kecerdasan buatan dipercaya untuk menilai permohonan kredit, menganalisis diagnosa medis, atau memproses identitas pribadi, risiko ketidakpastian (halusinasi) dan bias data wajib dimitigasi secara transparan.</p>
+                        
+                        <h4 class="fw-bold article-heading mt-4">1. Mitigasi Bias Algoritma dan Model Auditability</h4>
+                        <p>Model pembelajaran mesin bekerja berdasarkan data historis yang diinputkan. Jika data tersebut mengandung bias bias implisit, AI akan memperkuat bias tersebut. Di HoAi, kami merancang arsitektur <i>Explainable AI (XAI)</i> yang memungkinkan setiap keputusan keputusan model dapat dilacak kembali hingga ke fitur bobot dasarnya secara auditabel.</p>
+                        
+                        <h4 class="fw-bold article-heading mt-4">2. Zero-Knowledge Architecture & Enkripsi Data Sensitive</h4>
+                        <p>Keamanan data adalah pilar utama dari <strong>HoAi SafeGuard Framework</strong>. Kami menerapkan arsitektur enkripsi end-to-end berbasis Zero-Knowledge Proof (ZKP), sehingga data pelanggan tidak pernah disimpan dalam bentuk plaintext di server kami maupun digunakan untuk melatih model umum tanpa izin eksplisit.</p>
+                        
+                        <div class="p-4 article-callout rounded-3 my-4">
+                            <h6 class="fw-bold text-success mb-2"><i class="bi bi-shield-check"></i> Pilar Utama Keamanan Data HoAi:</h6>
+                            <ul class="mb-0 ps-3">
+                                <li class="mb-1"><strong>Kepatuhan PDP & GDPR:</strong> Menjamin seluruh pemrosesan data memenuhi standar perlindungan data pribadi nasional dan internasional.</li>
+                                <li class="mb-1"><strong>Anonymization Dynamic:</strong> Otomatisasi pengacakan identitas (PVI scrubbing) sebelum data diproses oleh model kecerdasan buatan.</li>
+                                <li class="mb-1"><strong>Real-time Anomaly Detection:</strong> Pengawasan 24/7 terhadap indikasi kebocoran prompt atau serangan injection.</li>
+                            </ul>
+                        </div>
+
+                        <h4 class="fw-bold article-heading mt-4">3. Langkah Nyata Membangun Trust di Sektor Enterprise</h4>
+                        <p>Mengintegrasikan AI yang aman memerlukan tata kelola (governance) yang terstruktur. HoAi terus bekerja sama dengan auditor independen dan lembaga sertifikasi keamanan untuk memastikan bahwa inovasi kecerdasan buatan yang kami berikan senantiasa etis, terukur, dan terlindungi dari ancaman siber masa depan.</p>
+                    </div>
+                </article>
+
+
+                <!-- ==================== ARTIKEL 3: Analytics & Supply Chain ==================== -->
+                <article class="article-post" id="supply-chain">
+                    <!-- Meta Header Info -->
+                    <div class="mb-4">
+                        <span class="badge bg-warning text-dark mb-2 px-3 py-2 rounded-pill"><i class="bi bi-graph-up-arrow me-1"></i> Analytics & Supply Chain</span>
+                        <h1 class="fw-bold mb-3 display-6 article-title">Optimasi Rantai Pasok Menggunakan Prediktif Analitik</h1>
+                        <div class="article-body-text small d-flex flex-wrap gap-3 align-items-center">
+                            <span><i class="bi bi-person-circle text-warning me-1"></i> Tim Data Analytics HoAi</span>
+                            <span><i class="bi bi-calendar3 text-warning me-1"></i> 10 September 2026</span>
+                            <span><i class="bi bi-clock text-warning me-1"></i> 4 Menit Bacaan</span>
+                        </div>
+                    </div>
+
+                    <!-- Featured Image Visual Box -->
+                    <div class="article-hero-banner text-white p-5 rounded-4 d-flex flex-column align-items-center justify-content-center mb-4 text-center" style="min-height: 240px; background: linear-gradient(135deg, #78350f 0%, #d97706 50%, #f59e0b 100%);">
+                        <i class="bi bi-graph-up-arrow display-1 text-light mb-2"></i>
+                        <span class="badge bg-dark text-warning font-monospace px-3 py-1 rounded-pill mt-2">HoAi Logistics Predictor Engine</span>
+                    </div>
+
+                    <!-- Body Content -->
+                    <div class="content article-body-text lh-lg">
+                        <p class="lead article-lead mb-4">Studi kasus efisiensi logistik global menggunakan algoritma prediksi cerdas yang dikembangkan oleh HoAi untuk mengurangi estimasi kerugian stok dan keterlambatan pengiriman.</p>
+                        
+                        <p>Disrupsi rantai pasok global dalam beberapa tahun terakhir menegaskan pentingnya visibilitas dan prediksi akurat dalam pengelolaan pasokan barang. Metode peramalan konvensional berbasis spreadsheet tidak lagi memadai untuk menangani ketidakpastian iklim, dinamika bahan bakar, dan variasi permintaan konsumen yang fluktuatif.</p>
+                        
+                        <h4 class="fw-bold article-heading mt-4">1. Transformasi Data Logistik Mentah Menjadi Prediksi Akurat</h4>
+                        <p>Dengan menggabungkan data histori transaksi, pola tren musim, dan indikator ekonomi makro, <strong>HoAi Logistics Predictor Engine</strong> mampu memodelkan peramalan permintaan stok dengan tingkat akurasi hingga 92%. Sistem ini memberikan rekomendasi kuantitas pemesanan secara otomatis guna mencegah penumpukan gudang (overstock) maupun kehabisan stok (stockout).</p>
+                        
+                        <h4 class="fw-bold article-heading mt-4">2. Mitigasi Rute Pengiriman dan Prediksi Cuaca Real-Time</h4>
+                        <p>Algoritma analitik prediktif HoAi memantau lebih dari 50 variabel rute pengiriman darat, laut, dan udara. Ketika terdeteksi potensi kendala cuaca atau penumpukan di pelabuhan tujuan, sistem secara otomatis memberikan rute alternatif teroptimasi untuk menghemat konsumsi energi dan waktu transit.</p>
+                        
+                        <div class="p-4 article-callout rounded-3 my-4">
+                            <h6 class="fw-bold text-warning mb-2"><i class="bi bi-graph-up"></i> Dampak Efisiensi Rantai Pasok HoAi:</h6>
+                            <ul class="mb-0 ps-3">
+                                <li class="mb-1"><strong>Efisiensi Stok Gudang:</strong> Pengurangan biaya penyimpanan dan stok mati hingga 35%.</li>
+                                <li class="mb-1"><strong>Ketepatan Waktu Pengiriman:</strong> Peningkatan On-Time In-Full (OTIF) delivery hingga 98.4%.</li>
+                                <li class="mb-1"><strong>Pengurangan Biaya Logistik:</strong> Penghematan total biaya operasional pengiriman hingga 28%.</li>
+                            </ul>
+                        </div>
+
+                        <h4 class="fw-bold article-heading mt-4">3. Integrasi Mudah dengan ERP & Dashboard Interaktif</h4>
+                        <p>Modul analitik HoAi dirancang agar dapat terhubung secara lancar ke berbagai platform ERP terkemuka melalui REST API yang aman. Keputusan bisnis yang biasanya membutuhkan waktu diskusi berturut-turut kini dapat diselesaikan dalam waktu singkat berkat dashboard rekomendasi visual otomatis.</p>
+                    </div>
+                </article>
+
 
                 <!-- Section Fitur Hubungi Kami di Bawah Artikel -->
-                <div class="mt-5 p-4 bg-light rounded-4 border">
+                <div class="mt-5 p-4 article-contact-box rounded-4">
                     <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
                         <div>
-                            <h5 class="fw-bold mb-1 text-dark"><i class="bi bi-chat-dots-fill text-primary me-2"></i> Butuh Konsultasi Solusi AI ini?</h5>
-                            <p class="text-secondary small mb-0">Tim pengembang dan spesialis AI HoAi siap membantu integrasi bisnis Anda.</p>
+                            <h5 class="fw-bold mb-1 article-title"><i class="bi bi-chat-dots-fill text-primary me-2"></i> Butuh Konsultasi Solusi AI ini?</h5>
+                            <p class="article-body-text small mb-0">Tim pengembang dan spesialis AI HoAi siap membantu integrasi bisnis Anda.</p>
                         </div>
                         <div class="d-flex flex-wrap gap-2">
                             <a href="https://wa.me/6282287201378" target="_blank" class="btn btn-success btn-sm px-3 rounded-pill">
-                                <i class="bi bi-whatsapp"></i> WA (+62 822-8720-1378)
+                                <i class="bi bi-whatsapp"></i> WhatsApp
                             </a>
-                            <a href="https://instagram.com/_manshb" target="_blank" class="btn btn-outline-dark btn-sm px-3 rounded-pill">
-                                <i class="bi bi-instagram"></i> @_manshb
+                            <a href="https://instagram.com/_manshb" target="_blank" class="btn btn-outline-primary btn-sm px-3 rounded-pill">
+                                <i class="bi bi-instagram"></i> Instagram
                             </a>
-                            <a href="https://tiktok.com/@hoai.ai" target="_blank" class="btn btn-outline-dark btn-sm px-3 rounded-pill">
-                                <i class="bi bi-tiktok"></i> @hoai.ai
+                            <a href="https://tiktok.com/@_onlyneedu" target="_blank" class="btn btn-outline-primary btn-sm px-3 rounded-pill">
+                                <i class="bi bi-tiktok"></i> TikTok
                             </a>
-                            <a href="https://linkedin.com/in/hoai-official" target="_blank" class="btn btn-primary btn-sm px-3 rounded-pill">
+                            <a href="https://linkedin.com/in/toman-sihombing" target="_blank" class="btn btn-primary btn-sm px-3 rounded-pill">
                                 <i class="bi bi-linkedin"></i> LinkedIn
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Artikel Terkait & Navigasi -->
+                <!-- Daftar Artikel Blog / Rekomendasi Navigasi -->
                 <div class="mt-5 pt-4 border-top">
-                    <h4 class="fw-bold text-dark mb-4">Rekomendasi Artikel Lainnya</h4>
+                    <h4 class="fw-bold article-heading mb-4"><i class="bi bi-journals text-primary me-2"></i> Daftar Artikel Blog Terkait</h4>
                     <div id="related-articles" class="row g-3">
-                        <div class="col-md-6">
-                            <div class="card h-100 border-0 bg-light rounded-3 p-3 hover-shadow">
+                        
+                        <!-- Link ke Artikel 1 -->
+                        <div class="col-md-4">
+                            <div class="card h-100 related-card rounded-3 p-3 hover-shadow">
                                 <div class="d-flex align-items-center gap-3">
-                                    <div class="bg-success rounded-3 p-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; flex-shrink: 0;">
-                                        <i class="bi bi-shield-lock fs-3 text-white"></i>
+                                    <div class="bg-primary rounded-3 p-3 d-flex align-items-center justify-content-center text-white" style="width: 48px; height: 48px; flex-shrink: 0;">
+                                        <i class="bi bi-cpu fs-5"></i>
                                     </div>
                                     <div class="flex-grow-1">
-                                        <div class="text-muted small">14 September 2026</div>
-                                        <h6 class="fw-bold mb-1 text-dark"><a href="blog-detail.html" class="text-decoration-none text-dark">Etika dan Keamanan Data dalam Penerapan Algoritma AI</a></h6>
-                                        <a href="blog-detail.html" class="text-primary small fw-semibold">Baca Artikel <i class="bi bi-arrow-right"></i></a>
+                                        <div class="article-body-text small">16 Sep 2026</div>
+                                        <h6 class="fw-bold mb-1"><a href="#generative-ai" class="text-decoration-none related-title">Masa Depan Generative AI</a></h6>
+                                        <a href="#generative-ai" class="text-primary small fw-semibold">Baca Artikel <i class="bi bi-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="card h-100 border-0 bg-light rounded-3 p-3 hover-shadow">
+
+                        <!-- Link ke Artikel 2 -->
+                        <div class="col-md-4">
+                            <div class="card h-100 related-card rounded-3 p-3 hover-shadow">
                                 <div class="d-flex align-items-center gap-3">
-                                    <div class="bg-warning rounded-3 p-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; flex-shrink: 0;">
-                                        <i class="bi bi-graph-up-arrow fs-3 text-white"></i>
+                                    <div class="bg-success rounded-3 p-3 d-flex align-items-center justify-content-center text-white" style="width: 48px; height: 48px; flex-shrink: 0;">
+                                        <i class="bi bi-shield-lock fs-5"></i>
                                     </div>
                                     <div class="flex-grow-1">
-                                        <div class="text-muted small">10 September 2026</div>
-                                        <h6 class="fw-bold mb-1 text-dark"><a href="blog-detail.html" class="text-decoration-none text-dark">Optimasi Rantai Pasok Menggunakan Prediktif Analitik</a></h6>
-                                        <a href="blog-detail.html" class="text-primary small fw-semibold">Baca Artikel <i class="bi bi-arrow-right"></i></a>
+                                        <div class="article-body-text small">14 Sep 2026</div>
+                                        <h6 class="fw-bold mb-1"><a href="#ethic-security" class="text-decoration-none related-title">Etika & Keamanan Data AI</a></h6>
+                                        <a href="#ethic-security" class="text-primary small fw-semibold">Baca Artikel <i class="bi bi-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Link ke Artikel 3 -->
+                        <div class="col-md-4">
+                            <div class="card h-100 related-card rounded-3 p-3 hover-shadow">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="bg-warning rounded-3 p-3 d-flex align-items-center justify-content-center text-dark" style="width: 48px; height: 48px; flex-shrink: 0;">
+                                        <i class="bi bi-graph-up-arrow fs-5"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="article-body-text small">10 Sep 2026</div>
+                                        <h6 class="fw-bold mb-1"><a href="#supply-chain" class="text-decoration-none related-title">Optimasi Rantai Pasok</a></h6>
+                                        <a href="#supply-chain" class="text-primary small fw-semibold">Baca Artikel <i class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="mt-4 text-center">
-                        <a href="blog.html" class="btn btn-outline-primary rounded-pill px-4"><i class="bi bi-grid"></i> Lihat Semua Artikel Blog</a>
+                        <a href="blog.html" class="btn btn-outline-primary rounded-pill px-4"><i class="bi bi-grid"></i> Lihat Semua Daftar Blog</a>
                     </div>
                 </div>
 
@@ -146,5 +277,6 @@
             <p class="mb-0 small">&copy; 2026 HoAi Artificial Intelligence. All rights reserved.</p>
         </div>
     </footer>
+
 </body>
 </html>
