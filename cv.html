@@ -4,33 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curriculum Vitae - Toman Sihombing | Lead AI Engineer HoAi</title>
-    <!-- Tailwind CSS CDN -->
+    <!-- Tailwind CSS 4 CDN -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <!-- Bootstrap Icons CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
     <!-- Custom CSS for Theme Toggle & Logo -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans antialiased min-h-screen py-10 px-4">
 
-    <!-- Pure CSS Theme Switcher Checkbox -->
-    <input type="checkbox" id="theme-toggle" class="theme-toggle-input" aria-label="Toggle Mode Dark/Light">
-
     <!-- Container Utama CV -->
     <div class="max-w-4xl mx-auto bg-slate-800/90 backdrop-blur-md shadow-2xl rounded-3xl overflow-hidden border border-slate-700/60 cv-main-card">
         
-        <!-- Top Action Bar (Logo & Theme Toggle) -->
+        <!-- Top Action Bar (Logo & Action Button) -->
         <div class="bg-slate-950/80 px-8 py-3 border-b border-slate-800 flex items-center justify-between cv-top-bar">
             <a href="index.html" class="inline-block">
                 <img src="assets/image/logo.svg" alt="HoAi Artificial Intelligence" class="site-logo">
             </a>
             <div class="flex items-center gap-3">
-                <label for="theme-toggle" class="theme-toggle-btn cursor-pointer" role="button" tabindex="0" title="Beralih Mode Gelap/Terang">
-                    <i class="bi bi-moon-stars-fill icon-dark text-info"></i>
-                    <i class="bi bi-sun-fill icon-light text-warning"></i>
-                    <span class="theme-toggle-label label-dark text-xs">Mode Gelap</span>
-                    <span class="theme-toggle-label label-light text-xs">Mode Terang</span>
-                </label>
                 <a href="index.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-3 py-1.5 rounded-lg text-xs transition">← Beranda</a>
             </div>
         </div>
